@@ -142,7 +142,10 @@ export default {
 </script>
 
 <style scoped>
+
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+/* light mode  */
 .p-button {
   margin-left: auto;
   margin-right: auto;
@@ -212,5 +215,45 @@ color: #ffffff;
   font-size: 20px;
   }
  
+}
+
+/* dark mode  */
+
+.p-button-darkmode {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d4af37;
+  border-color: #d4af37 !important;
+}
+.p-button-darkmode:hover {
+  background-color: #3d5f77 !important;
+  border-color: #d4af37 !important;
+}
+
+.dates-darkmode {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -35%;
+  transform: translate(-50%, -50%);
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+text-transform: uppercase;
+
+color: #ffffff;
+}
+.sub-heading-darkmode {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.color-word2-darkmode {
+  color: #3d5f77;
 }
 </style>

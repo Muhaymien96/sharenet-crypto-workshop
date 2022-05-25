@@ -1,9 +1,10 @@
 <template>
-  <section class="section1">
+<br><br>
+  <section :class="darkMode === true ? 'section1-darkmode' : 'section1'">
     <p class="main-heading">
-      WELCOME TO<br />SHARENET'S <span class="color-word">CRYPTO</span> WORKSHOP
+      WELCOME TO<br />SHARENET'S <span :class="darkMode === true ? 'color-word-darkmode' : 'color-word'">CRYPTO</span> WORKSHOP
     </p>
-    <p class="text">
+    <p :class="darkMode === true ? 'text-darkmode' : 'text'">
       At the end of this workshop you’ll know the rules of thumb to follow
       across all of the fundamental of Crypto and the tech behind it all. You’ll
       be less likely to be fooled because you understand the history, the theory
@@ -13,8 +14,8 @@
   <section class="section2">
         <BookingModal v-if="!cardsActive" />
     <div class="row">
-      <h2 class="sub-heading mt-3" v-if="cardsActive">
-        Select A <span class="color-word2">City</span>
+      <h2 :class="darkMode === true ?'sub-heading-darkmode mt-3' : 'sub-heading mt-3'" v-if="cardsActive">
+        Select A <span :class="darkMode === true? 'color-word2' : ' color-word2-darkmode'">City</span>
       </h2>
       <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
@@ -54,8 +55,6 @@
       </div>
     </div>
   </section>
-
-
 </template>
 
 <script>
@@ -71,6 +70,7 @@ export default {
   computed: {
     ...mapState({
       cardsActive: (state) => state.booking.cardsActive,
+      darkMode: (state) => state.booking.darkMode
     }),
   },
   methods: {
@@ -80,10 +80,11 @@ export default {
 </script>
 
 <style scoped>
+/* light mode  */
 .section1 {
   width: 100%;
   height: 400px;
-  margin-top: 2rem;
+  padding-top: 2rem;
   object-fit: cover;
   background-image: linear-gradient(
       90deg,
@@ -135,7 +136,7 @@ padding-top: 5rem;
   font-weight: 600;
   font-size: 30px;
   text-transform: uppercase;
-  color: #000000;
+  color: white;
 }
 .color-word2 {
   color: #3d5f77;
@@ -219,10 +220,53 @@ padding-top: 5rem;
     margin-left: auto;
     margin-right: auto;
   }
-  .p-button {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #d4af37;
-  }
+}
+
+/* dark mode  */
+.section1-darkmode {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  background-image: linear-gradient(90deg, #D4AF37 0%, rgba(212, 175, 55, 0) 159.37%),
+    url("../assets/home-bg.jpg");
+  background-size: cover;
+  border-radius: 20px;
+  z-index: -100000;
+  margin-left: auto;
+  margin-right: auto;
+}
+.p-button-darkmode {
+  margin-left: auto;
+  margin-right: auto;
+ background-color: #3d5f77;
+  border-color: #3d5f77 !important;
+}
+.p-button-darkmode:hover {
+  background-color:#d4af37 !important;
+  border-color:  #3d5f77 !important;
+}
+
+.sub-heading-darkmode {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: black;
+}
+.color-word2-darkmode {
+  color: #d4af37;
+}
+.text-darkmode {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  width: 75%;
+  font-size: 16px;
+  color: #ffffff;
+  margin-left: 3rem;
+}
+.color-word-darkmode {
+  color: #3d5f77;
 }
 </style>

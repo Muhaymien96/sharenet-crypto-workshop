@@ -42,8 +42,9 @@
       <div class="flex justify-content-end">
         <Button
           label="Confirm"
+          icon="pi pi-check"
           @click="confirmSeats"
-          class="p-button-primary"
+          class="p-button-rounded"
         />
       </div>
     </template>
@@ -170,4 +171,30 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+/* light mode  */
+.p-button {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d4af37;
+  border-color: #d4af37 !important;
+}
+.p-button:hover {
+  background-color: #3d5f77 !important;
+  border-color: #d4af37 !important;
+}
+
+/* dark mode  */
+
+.p-button-darkmode {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d4af37;
+  border-color: #d4af37 !important;
+}
+.p-button-darkmode:hover {
+  background-color: #3d5f77 !important;
+  border-color: #d4af37 !important;
+}
+</style>

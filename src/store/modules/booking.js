@@ -1,6 +1,7 @@
 export const booking = {
   state: {
     isModalOpen: false,
+    darkMode: false,
     date: null,
     cart: [],
     cardsActive: true,
@@ -104,9 +105,9 @@ export const booking = {
       state.isModalOpen = !state.isModalOpen;
       state.date = null;
     },
-    setSeats(state, payload) {
-      state.availability = payload;
-    },
+    toggleMode(state){
+      state.darkMode = !state.darkMode
+    }
   },
   actions: {},
   getters: {},
