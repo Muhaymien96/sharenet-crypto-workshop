@@ -1,6 +1,6 @@
 <template>
   <section class="section1">
-    <p class="main-heading pt-2">
+    <p class="main-heading">
       WELCOME TO<br />SHARENET'S <span class="color-word">CRYPTO</span> WORKSHOP
     </p>
     <p class="text">
@@ -11,11 +11,12 @@
     </p>
   </section>
   <section class="section2">
+        <BookingModal v-if="!cardsActive" />
     <div class="row">
       <h2 class="sub-heading mt-3" v-if="cardsActive">
         Select A <span class="color-word2">City</span>
       </h2>
-      <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
+      <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
           <img class="head-pic" alt="cpt header" src="../assets/cpt.jpg" />
           <h3 class="city mt-2">Cape Town</h3>
@@ -27,9 +28,9 @@
           />
         </div>
       </div>
-      <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
+      <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
-          <img class="head-pic" alt="cpt header" src="../assets/jhb.jpg" />
+          <img class="head-pic" alt="jhb header" src="../assets/jhb.jpg" />
           <h3 class="city mt-2">Johannesburg</h3>
           <Button
             @click="toggleCityJHB"
@@ -39,9 +40,9 @@
           />
         </div>
       </div>
-      <div class="col-xs-12 col-md-6 col-lg-4 mt-4">
+      <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
-          <img class="head-pic" alt="cpt header" src="../assets/kzn.jpg" />
+          <img class="head-pic" alt="dbn header" src="../assets/kzn.jpg" />
           <h3 class="city mt-2">Durban</h3>
           <Button
             @click="toggleCityKZN"
@@ -54,7 +55,7 @@
     </div>
   </section>
 
-  <BookingModal v-if="!cardsActive" />
+
 </template>
 
 <script>
@@ -81,7 +82,7 @@ export default {
 <style scoped>
 .section1 {
   width: 100%;
-  height: 720px;
+  height: 400px;
   margin-top: 2rem;
   object-fit: cover;
   background-image: linear-gradient(
@@ -114,11 +115,13 @@ export default {
   border-radius: 20px;
 }
 .main-heading {
-  margin-top: 10px;
+padding-top: 5rem;
+  margin-left: 3rem;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 32px;
+  text-align: left;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -130,7 +133,7 @@ export default {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 30px;
   text-transform: uppercase;
   color: #000000;
 }
@@ -141,14 +144,39 @@ export default {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  width: 75%;
+  font-size: 16px;
   color: #ffffff;
+  margin-left: 3rem;
 }
 .color-word {
   color: #d4af37;
 }
 .cards {
   border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+.section1 {
+    width: 100%;
+    height: 300px;
+    top: 70px;
+  }
+    .main-heading {
+    font-size: 28px;
+    text-align: left;
+    margin-left: 0.7rem;
+    padding-top: 30px;
+  }
+  .text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    width: 65%;
+    margin-left: 1rem;
+  }
+
 }
 
 @media screen and (max-width: 430px) {

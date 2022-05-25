@@ -1,19 +1,18 @@
 <template>
-  <div class="container">
     <div v-if="city === 'Cape Town'">
-      <h1>Availability for {{ " " + city }}</h1>
+       <h2 class="sub-heading mt-4">Availability for <span class="color-word2">{{ " " + city }}</span></h2>
       <div class="row">
-        <div class="col-4" v-for="cape in cptAvail" :key="cape">
-          <div class="date-card">
-            <span class="dates ms-4 pt-3"
-              ><strong>{{ cape.date }}</strong></span
+        <div class="col-xs-12 col-md-6 col-xl-4" v-for="cape in cptAvail" :key="cape">
+            <img class="head-pic mt-3" alt="cpt header" src="../assets/cpt-light.jpg" />
+           <span class="dates ms-4 pt-3"
+              >{{ cape.date }}</span
             ><br />
             <span v-if="cape.remaining > 0" class="status ms-4 pt-3"
-              ><strong>{{ cape.remaining + " seats left" }}</strong></span
+              >{{ cape.remaining + " seats left" }}</span
             >
             <span v-else class="status ms-4 pt-3"
-              ><strong>Sold Out</strong></span
-            >
+              >Sold Out</span
+            ><br>
             <Button
               @click="toggleDate(cape.date)"
               icon="pi pi-calendar-plus"
@@ -22,7 +21,7 @@
               style="width: 12rem"
               :disabled="cape.remaining === 0"
             />
-          </div>
+            <br><br>
         </div>
       </div>
       <Button
@@ -31,23 +30,24 @@
         class="p-button-rounded ms-4 mt-2"
         style="width: 12rem"
       />
+      <br><br>
     </div>
     <!-- Johannesburg -->
 
     <div v-if="city === 'Johannesburg'">
-      <h1>Availability for {{ " " + city }}</h1>
+       <h1>Availability for <span class="color-word2">{{ " " + city }}</span></h1>
       <div class="row">
-        <div class="col-4" v-for="joburg in jhbAvail" :key="joburg">
-          <div class="date-card">
-            <span class="dates ms-4 pt-3"
-              ><strong>{{ joburg.date }}</strong></span
+        <div class="col-xs-12 col-md-6 col-xl-4" v-for="joburg in jhbAvail" :key="joburg">
+          <img class="head-pic" alt="jhb header" src="../assets/jhb-light.jpg" />
+            <span class="dates"
+              >{{ joburg.date }}</span
             ><br />
             <span v-if="joburg.remaining > 0" class="status ms-4 pt-3"
-              ><strong>{{ joburg.remaining + " seats left" }}</strong></span
+              >{{ joburg.remaining + " seats left" }}</span
             >
             <span v-else class="status ms-4 pt-3"
-              ><strong>Sold Out</strong></span
-            >
+              >Sold Out</span
+            ><br>
             <Button
               @click="toggleDate(joburg.date)"
               icon="pi pi-calendar-plus"
@@ -56,7 +56,7 @@
               style="width: 12rem"
               :disabled="joburg.remaining === 0"
             />
-          </div>
+        <br><br>
         </div>
       </div>
       <Button
@@ -69,19 +69,19 @@
     <!-- Durban  -->
 
     <div v-if="city === 'Durban'">
-      <h1>Availability for {{ " " + city }}</h1>
+      <h1>Availability for <span class="color-word2">{{ " " + city }}</span></h1>
       <div class="row">
-        <div class="col-4" v-for="durbs in dbnAvail" :key="durbs">
-          <div class="date-card">
-            <span class="dates ms-4 pt-3"
-              ><strong>{{ durbs.date }}</strong></span
+        <div class="col-xs-12 col-md-6 col-xl-4" v-for="durbs in dbnAvail" :key="durbs">
+           <img class="head-pic" alt="dbn header" src="../assets/kzn-light.jpg" />
+           <span class="dates"
+              >{{ durbs.date }}</span
             ><br />
             <span v-if="durbs.remaining > 0" class="status ms-4 pt-3"
-              ><strong>{{ durbs.remaining + " seats left" }}</strong></span
+              >{{ durbs.remaining + " seats left" }}</span
             >
             <span v-else class="status ms-4 pt-3"
-              ><strong>Sold Out</strong></span
-            >
+              >Sold Out</span
+            ><br>
             <Button
               @click="toggleDate(durbs.date)"
               icon="pi pi-calendar-plus"
@@ -90,9 +90,10 @@
               style="width: 12rem"
               :disabled="durbs.remaining === 0"
             />
-          </div>
+            <br><br>
         </div>
       </div>
+      <br>
       <Button
         @click="toggleCardsActive"
         label="Go Back"
@@ -100,7 +101,6 @@
         style="width: 12rem"
       />
     </div>
-  </div>
 
   <SeatsModal v-if="isModalOpen" />
 </template>
@@ -142,15 +142,75 @@ export default {
 </script>
 
 <style scoped>
-.date-card {
-  padding: 10px;
-  height: 100px;
-  width: 300px;
-  background-color: aliceblue;
-  margin-bottom: 10%;
-  border-radius: 5%;
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@100;200;300;400;500;600&display=swap");
+.p-button {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d4af37;
+  border-color: #d4af37 !important;
+}
+.p-button:hover {
+  background-color: #3d5f77 !important;
+  border-color: #d4af37 !important;
 }
 
-@media screen and (max-width: 430px) {
+.head-pic {
+  width: 340px;
+  height: 250px;
+  border-radius: 20px;
+  z-index: -10000;
+}
+.dates {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -35%;
+  transform: translate(-50%, -50%);
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+text-transform: uppercase;
+
+color: #ffffff;
+}
+.sub-heading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.color-word2 {
+  color: #3d5f77;
+}
+
+
+
+@media screen and (max-width: 424px) {
+ 
+  .sub-heading {
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .head-pic {
+    width: 250px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dates {
+    margin-left: auto;
+    margin-right: auto;
+     top: -30%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  }
+ 
 }
 </style>
