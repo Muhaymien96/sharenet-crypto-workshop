@@ -1,8 +1,8 @@
 <template>
 <br><br>
-  <section :class="darkMode === true ? 'section1-darkmode' : 'section1'">
+  <section :class="darkMode === true ? 'section1' : 'section1-darkmode'">
     <p class="main-heading">
-      WELCOME TO<br />SHARENET'S <span :class="darkMode === true ? 'color-word-darkmode' : 'color-word'">CRYPTO</span> WORKSHOP
+      WELCOME TO<br />SHARENET'S <span :class="darkMode === true ? 'color-word' : 'color-word-darkmode'">CRYPTO</span> WORKSHOP
     </p>
     <p :class="darkMode === true ? 'text-darkmode' : 'text'">
       At the end of this workshop you’ll know the rules of thumb to follow
@@ -226,6 +226,7 @@ padding-top: 5rem;
 .section1-darkmode {
   width: 100%;
   height: 400px;
+  padding-top: 2rem;
   object-fit: cover;
   background-image: linear-gradient(90deg, #D4AF37 0%, rgba(212, 175, 55, 0) 159.37%),
     url("../assets/home-bg.jpg");
