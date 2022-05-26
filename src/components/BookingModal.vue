@@ -1,6 +1,6 @@
 <template>
     <div v-if="city === 'Cape Town'">
-       <h1 :class="darkMode === true ? 'sub-heading' : 'sub-heading-darkmode'">Availability for <span :class="darkMode === true ? 'color-word2' : 'color-word2-darkmode'" >{{ " " + city }}</span></h1>
+         <h1 :class="darkMode === true ? 'sub-heading' : 'sub-heading-darkmode'">Availability for <span :class="darkMode === true ? 'color-word2' : 'color-word2-darkmode'" >{{ " " + city }}</span></h1>
       <div class="row">
         <div class="col-xs-12 col-md-6 col-xl-4" v-for="cape in cptAvail" :key="cape">
             <img class="head-pic mt-3" alt="cpt header" src="../assets/cpt-light.jpg" />
@@ -17,7 +17,7 @@
               @click="toggleDate(cape.date)"
               icon="pi pi-calendar-plus"
               label="Book Now"
-              class="p-button-rounded ms-4 mt-2"
+:class="darkMode === true ? 'p-button-rounded p-button-darkmode ms-4 mt-2' : 'p-button-rounded ms-4 mt-2'"
               style="width: 12rem"
               :disabled="cape.remaining === 0"
             />
@@ -27,7 +27,7 @@
       <Button
         @click="toggleCardsActive"
         label="Go Back"
-        class="p-button-rounded ms-4 mt-2"
+        :class="darkMode === true ? 'p-button-rounded p-button-darkmode ms-4 mt-2' : 'p-button-rounded ms-4 mt-2'"
         style="width: 12rem"
       />
       <br><br>
@@ -52,7 +52,7 @@
               @click="toggleDate(joburg.date)"
               icon="pi pi-calendar-plus"
               label="Book Now"
-              class="p-button-rounded ms-4 mt-2"
+              :class="darkMode === true ? 'p-button-rounded p-button-darkmode ms-4 mt-2' : 'p-button-rounded ms-4 mt-2'"
               style="width: 12rem"
               :disabled="joburg.remaining === 0"
             />
@@ -86,7 +86,7 @@
               @click="toggleDate(durbs.date)"
               icon="pi pi-calendar-plus"
               label="Book Now"
-              class="p-button-rounded ms-4 mt-2"
+             :class="darkMode === true ? 'p-button-rounded p-button-darkmode ms-4 mt-2' : 'p-button-rounded ms-4 mt-2'"
               style="width: 12rem"
               :disabled="durbs.remaining === 0"
             />
@@ -97,7 +97,7 @@
       <Button
         @click="toggleCardsActive"
         label="Go Back"
-        class="p-button-rounded ms-4 mt-2"
+        :class="darkMode === true ? 'p-button-rounded p-button-darkmode ms-4 mt-2' : 'p-button-rounded ms-4 mt-2'"
         style="width: 12rem"
       />
     </div>
@@ -228,30 +228,14 @@ h1{
 /* dark mode  */
 
 .p-button-darkmode {
-  margin-left: auto;
+   margin-left: auto;
   margin-right: auto;
-  background-color: #d4af37;
-  border-color: #d4af37 !important;
+ background-color: #3d5f77;
+  border-color: #3d5f77 !important;
 }
 .p-button-darkmode:hover {
-  background-color: #3d5f77 !important;
-  border-color: #d4af37 !important;
-}
-
-.dates-darkmode {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: -35%;
-  transform: translate(-50%, -50%);
-
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-text-transform: uppercase;
-
-color: #ffffff;
+  background-color:#d4af37 !important;
+  border-color:  #3d5f77 !important;
 }
 .sub-heading-darkmode {
   font-family: "Poppins";

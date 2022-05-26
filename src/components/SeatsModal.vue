@@ -6,10 +6,10 @@
     :closeOnEscape="false"
   >
     <template #header>
-      <h2 class="heading">{{ "Booking Seats for " + city + " Workshop" }}</h2>
+      <h3 class="heading">{{ "Booking Seats for " + city + " Workshop" }}</h3>
     </template>
-    <h3 class="subheading">Date: {{ date }}</h3>
-    <h4 class="venue">Venue: {{ venue }}</h4>
+    <h5 class="subheading">Date: {{ date }}</h5>
+    <h5 class="venue">Venue: {{ venue }}</h5>
     <section id="seats">
       <div class="container">
         <div class="row">
@@ -44,7 +44,7 @@
           label="Confirm"
           icon="pi pi-check"
           @click="confirmSeats"
-          class="p-button-rounded"
+          :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded'"
         />
       </div>
     </template>
@@ -72,6 +72,7 @@ export default {
       jhbAvail: (state) => state.booking.jhbAvail,
       dbnAvail: (state) => state.booking.dbnAvail,
       remainder: (state) => state.booking.remainder,
+      darkMode: (state) => state.booking.darkMode
     }),
   },
   components: {
@@ -188,13 +189,13 @@ export default {
 /* dark mode  */
 
 .p-button-darkmode {
-  margin-left: auto;
+   margin-left: auto;
   margin-right: auto;
-  background-color: #d4af37;
-  border-color: #d4af37 !important;
+ background-color: #3d5f77;
+  border-color: #3d5f77 !important;
 }
 .p-button-darkmode:hover {
-  background-color: #3d5f77 !important;
-  border-color: #d4af37 !important;
+  background-color:#d4af37 !important;
+  border-color:  #3d5f77 !important;
 }
 </style>

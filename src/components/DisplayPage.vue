@@ -23,7 +23,7 @@
           <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Cape Town</h3>
           <Button
             @click="toggleCityCPT"
-            :class="darkMode === true ? 'p-button-darkmode' : 'p-button'"
+            :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded '"
             icon="pi pi-eye"
             label="View More"
           />
@@ -35,7 +35,7 @@
           <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Johannesburg</h3>
           <Button
             @click="toggleCityJHB"
-            :class="darkMode === true ? 'p-button-darkmode' : 'p-button'"
+            :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded '"
             icon="pi pi-eye"
             label="View More"
           />
@@ -47,7 +47,7 @@
           <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Durban</h3>
           <Button
             @click="toggleCityKZN"
-            :class="darkMode === true ? 'p-button-darkmode' : 'p-button'"
+            :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded'"
             icon="pi pi-eye"
             label="View More"
           />
