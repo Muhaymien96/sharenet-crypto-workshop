@@ -44,7 +44,11 @@
           label="Confirm"
           icon="pi pi-check"
           @click="confirmSeats"
-          :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded'"
+          :class="
+            darkMode === true
+              ? 'p-button-rounded p-button-darkmode'
+              : 'p-button-rounded'
+          "
         />
       </div>
     </template>
@@ -72,7 +76,7 @@ export default {
       jhbAvail: (state) => state.booking.jhbAvail,
       dbnAvail: (state) => state.booking.dbnAvail,
       remainder: (state) => state.booking.remainder,
-      darkMode: (state) => state.booking.darkMode
+      darkMode: (state) => state.booking.darkMode,
     }),
   },
   components: {
@@ -173,7 +177,6 @@ export default {
 </script>
 
 <style scoped>
-
 /* light mode  */
 .p-button {
   margin-left: auto;
@@ -186,17 +189,16 @@ export default {
   border-color: #d4af37 !important;
 }
 
-
 /* dark mode  */
 
 .p-button-darkmode {
-   margin-left: auto;
+  margin-left: auto;
   margin-right: auto;
- background-color: #3d5f77;
+  background-color: #3d5f77;
   border-color: #3d5f77 !important;
 }
 .p-button-darkmode:hover {
-  background-color:#d4af37 !important;
-  border-color:  #3d5f77 !important;
+  background-color: #d4af37 !important;
+  border-color: #3d5f77 !important;
 }
 </style>

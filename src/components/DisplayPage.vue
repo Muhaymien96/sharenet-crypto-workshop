@@ -1,8 +1,12 @@
 <template>
-<br><br>
+  <br /><br />
   <section :class="darkMode === true ? 'section1' : 'section1-darkmode'">
     <p class="main-heading">
-      WELCOME TO<br />SHARENET'S <span :class="darkMode === true ? 'color-word' : 'color-word-darkmode'">CRYPTO</span> WORKSHOP
+      WELCOME TO<br />SHARENET'S
+      <span :class="darkMode === true ? 'color-word' : 'color-word-darkmode'"
+        >CRYPTO</span
+      >
+      WORKSHOP
     </p>
     <p :class="darkMode === true ? 'text-darkmode' : 'text'">
       At the end of this workshop you’ll know the rules of thumb to follow
@@ -12,18 +16,36 @@
     </p>
   </section>
   <section class="section2">
-        <BookingModal v-if="!cardsActive" />
+    <BookingModal v-if="!cardsActive" />
     <div class="row">
-      <h2 :class="darkMode === true ?'sub-heading-darkmode mt-3' : 'sub-heading mt-3'" v-if="cardsActive">
-        Select A <span :class="darkMode === true? 'color-word2' : ' color-word2-darkmode'">City</span>
+      <h2
+        :class="
+          darkMode === true ? 'sub-heading-darkmode mt-3' : 'sub-heading mt-3'
+        "
+        v-if="cardsActive"
+      >
+        Select A
+        <span
+          :class="darkMode === true ? 'color-word2' : ' color-word2-darkmode'"
+          >City</span
+        >
       </h2>
       <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
           <img class="head-pic" alt="cpt header" src="../assets/cpt.jpg" />
-          <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Cape Town</h3>
+          <h3
+            :class="darkMode === true ? 'city-dark' : 'city'"
+            class="city mt-2"
+          >
+            Cape Town
+          </h3>
           <Button
             @click="toggleCityCPT"
-            :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded '"
+            :class="
+              darkMode === true
+                ? 'p-button-rounded p-button-darkmode'
+                : 'p-button-rounded '
+            "
             icon="pi pi-eye"
             label="View More"
           />
@@ -32,10 +54,19 @@
       <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
           <img class="head-pic" alt="jhb header" src="../assets/jhb.jpg" />
-          <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Johannesburg</h3>
+          <h3
+            :class="darkMode === true ? 'city-dark' : 'city'"
+            class="city mt-2"
+          >
+            Johannesburg
+          </h3>
           <Button
             @click="toggleCityJHB"
-            :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded '"
+            :class="
+              darkMode === true
+                ? 'p-button-rounded p-button-darkmode'
+                : 'p-button-rounded '
+            "
             icon="pi pi-eye"
             label="View More"
           />
@@ -44,10 +75,19 @@
       <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
           <img class="head-pic" alt="dbn header" src="../assets/kzn.jpg" />
-          <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Durban</h3>
+          <h3
+            :class="darkMode === true ? 'city-dark' : 'city'"
+            class="city mt-2"
+          >
+            Durban
+          </h3>
           <Button
             @click="toggleCityKZN"
-            :class="darkMode === true ? 'p-button-rounded p-button-darkmode' : 'p-button-rounded'"
+            :class="
+              darkMode === true
+                ? 'p-button-rounded p-button-darkmode'
+                : 'p-button-rounded'
+            "
             icon="pi pi-eye"
             label="View More"
           />
@@ -70,7 +110,7 @@ export default {
   computed: {
     ...mapState({
       cardsActive: (state) => state.booking.cardsActive,
-      darkMode: (state) => state.booking.darkMode
+      darkMode: (state) => state.booking.darkMode,
     }),
   },
   methods: {
@@ -81,10 +121,10 @@ export default {
 
 <style scoped>
 /* @media (min-width: 1619px) { */
-  .section2{
-    padding-bottom: 64px;
-  }
-  
+.section2 {
+  padding-bottom: 64px;
+}
+
 /* } */
 /* light mode  */
 .section1 {
@@ -122,7 +162,7 @@ export default {
   border-radius: 20px;
 }
 .main-heading {
-padding-top: 5rem;
+  padding-top: 5rem;
   margin-left: 3rem;
   font-family: "Poppins";
   font-style: normal;
@@ -137,7 +177,7 @@ padding-top: 5rem;
   margin-right: auto;
   color: white;
 }
-.city-dark{
+.city-dark {
   color: black;
 }
 .sub-heading {
@@ -169,12 +209,12 @@ padding-top: 5rem;
 }
 
 @media screen and (max-width: 768px) {
-.section1 {
+  .section1 {
     width: 100%;
     height: 300px;
     top: 70px;
   }
-    .main-heading {
+  .main-heading {
     font-size: 28px;
     text-align: left;
     margin-left: 0.7rem;
@@ -188,7 +228,6 @@ padding-top: 5rem;
     width: 65%;
     margin-left: 1rem;
   }
-
 }
 
 @media screen and (max-width: 430px) {
@@ -239,7 +278,11 @@ padding-top: 5rem;
   height: 400px;
   padding-top: 2rem;
   object-fit: cover;
-  background-image: linear-gradient(90deg, #D4AF37 0%, rgba(212, 175, 55, 0) 159.37%),
+  background-image: linear-gradient(
+      90deg,
+      #d4af37 0%,
+      rgba(212, 175, 55, 0) 159.37%
+    ),
     url("../assets/home-bg.jpg");
   background-size: cover;
   border-radius: 20px;
@@ -250,12 +293,12 @@ padding-top: 5rem;
 .p-button-darkmode {
   margin-left: auto;
   margin-right: auto;
- background-color: #3d5f77;
+  background-color: #3d5f77;
   border-color: #3d5f77 !important;
 }
 .p-button-darkmode:hover {
-  background-color:#d4af37 !important;
-  border-color:  #3d5f77 !important;
+  background-color: #d4af37 !important;
+  border-color: #3d5f77 !important;
 }
 
 .sub-heading-darkmode {

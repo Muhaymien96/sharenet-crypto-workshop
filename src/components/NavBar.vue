@@ -1,5 +1,12 @@
 <template>
-  <nav class="navbar bg-light sticky-top" :class="darkMode === true ? 'navbar bg-light sticky-top navbar-darkmode' : 'navbar bg-light sticky-top'">
+  <nav
+    class="navbar bg-light sticky-top"
+    :class="
+      darkMode === true
+        ? 'navbar bg-light sticky-top navbar-darkmode'
+        : 'navbar bg-light sticky-top'
+    "
+  >
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img
@@ -9,11 +16,9 @@
         />
       </a>
       <!-- <button @click="toggleMode" :class="darkMode === true ? 'sun' : 'moon'"> -->
-        <i v-if="!darkMode" class="pi pi-sun" @click="toggleMode"></i>
-        <i v-if="darkMode" class="pi pi-moon" @click="toggleMode"></i>
+      <i v-if="!darkMode" class="pi pi-sun" @click="toggleMode"></i>
+      <i v-if="darkMode" class="pi pi-moon" @click="toggleMode"></i>
       <!-- </button> -->
-       
-        
     </div>
   </nav>
 </template>
@@ -24,26 +29,25 @@ export default {
   computed: {
     ...mapState({
       darkMode: (state) => state.booking.darkMode,
-      }) 
+    }),
   },
   methods: {
-    ...mapMutations(["toggleMode"])
-  }
-
+    ...mapMutations(["toggleMode"]),
+  },
 };
 </script>
 
 <style scoped>
 .navbar {
   background-color: #6da0aa !important;
-   transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
-.pi-sun{
+.pi-sun {
   cursor: pointer;
   font-size: 40px;
   color: white;
 }
-.pi-moon{
+.pi-moon {
   cursor: pointer;
   font-size: 40px;
   color: black;
@@ -58,6 +62,6 @@ export default {
 /* dark mode  */
 .navbar-darkmode {
   background-color: #3d5f77 !important;
-   transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 </style>

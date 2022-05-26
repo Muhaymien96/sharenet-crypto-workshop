@@ -1,5 +1,9 @@
 <template>
-  <div :class="darkMode === true ? 'container-fluid dark' : 'container-fluid light'">
+  <div
+    :class="
+      darkMode === true ? 'container-fluid dark' : 'container-fluid light'
+    "
+  >
     <DisplayPage />
   </div>
 </template>
@@ -13,11 +17,11 @@ export default {
   components: {
     DisplayPage,
   },
-    computed: {
-      ...mapState({
-darkMode: (state) => state.booking.darkMode
-      })
-    }
+  computed: {
+    ...mapState({
+      darkMode: (state) => state.booking.darkMode,
+    }),
+  },
 };
 </script>
 <style scoped>
@@ -25,8 +29,8 @@ darkMode: (state) => state.booking.darkMode
   background-color: white;
   transition: 1s ease-in-out;
 }
-.light{
-  background-color: #3D5F77;
+.light {
+  background-color: #3d5f77;
   transition: 1s ease-in-out;
 }
 </style>

@@ -105,9 +105,9 @@ export const booking = {
       state.isModalOpen = !state.isModalOpen;
       state.date = null;
     },
-    toggleMode(state){
-      state.darkMode = !state.darkMode
-    }
+    toggleMode(state) {
+      state.darkMode = !state.darkMode;
+    },
   },
   actions: {},
   getters: {},
