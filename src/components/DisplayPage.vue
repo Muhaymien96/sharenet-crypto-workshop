@@ -20,10 +20,10 @@
       <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
           <img class="head-pic" alt="cpt header" src="../assets/cpt.jpg" />
-          <h3 class="city mt-2">Cape Town</h3>
+          <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Cape Town</h3>
           <Button
             @click="toggleCityCPT"
-            class="p-button-rounded mb-4 p-2"
+            :class="darkMode === true ? 'p-button-darkmode' : 'p-button'"
             icon="pi pi-eye"
             label="View More"
           />
@@ -32,10 +32,10 @@
       <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
           <img class="head-pic" alt="jhb header" src="../assets/jhb.jpg" />
-          <h3 class="city mt-2">Johannesburg</h3>
+          <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Johannesburg</h3>
           <Button
             @click="toggleCityJHB"
-            class="p-button-rounded mb-4 p-2"
+            :class="darkMode === true ? 'p-button-darkmode' : 'p-button'"
             icon="pi pi-eye"
             label="View More"
           />
@@ -44,10 +44,10 @@
       <div class="col-xs-12 col-md-6 col-xl-4 mt-4">
         <div v-if="cardsActive" class="cards">
           <img class="head-pic" alt="dbn header" src="../assets/kzn.jpg" />
-          <h3 class="city mt-2">Durban</h3>
+          <h3 :class="darkMode === true ? 'city-dark' : 'city'" class="city mt-2">Durban</h3>
           <Button
             @click="toggleCityKZN"
-            class="p-button-rounded mb-4 p-2"
+            :class="darkMode === true ? 'p-button-darkmode' : 'p-button'"
             icon="pi pi-eye"
             label="View More"
           />
@@ -80,6 +80,12 @@ export default {
 </script>
 
 <style scoped>
+/* @media (min-width: 1619px) { */
+  .section2{
+    padding-bottom: 64px;
+  }
+  
+/* } */
 /* light mode  */
 .section1 {
   width: 100%;
@@ -129,6 +135,10 @@ padding-top: 5rem;
 .city {
   margin-left: auto;
   margin-right: auto;
+  color: white;
+}
+.city-dark{
+  color: black;
 }
 .sub-heading {
   font-family: "Poppins";
@@ -149,6 +159,7 @@ padding-top: 5rem;
   font-size: 16px;
   color: #ffffff;
   margin-left: 3rem;
+  text-align: initial;
 }
 .color-word {
   color: #d4af37;
@@ -262,6 +273,7 @@ padding-top: 5rem;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
+  text-align: initial;
   width: 75%;
   font-size: 16px;
   color: #ffffff;
