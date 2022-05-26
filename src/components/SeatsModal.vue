@@ -185,16 +185,17 @@ export default {
   border-color: #d4af37 !important;
 }
 
+
 /* dark mode  */
 
 .p-button-darkmode {
   margin-left: auto;
   margin-right: auto;
-  background-color: #d4af37;
-  border-color: #d4af37 !important;
+  background-color: #3d5f77;
+  border-color: #3d5f77 !important;
 }
 .p-button-darkmode:hover {
-  background-color: #3d5f77 !important;
-  border-color: #d4af37 !important;
+  background-color: #d4af37 !important;
+  border-color: #3d5f77 !important;
 }
 </style>
