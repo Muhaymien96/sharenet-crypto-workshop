@@ -1,16 +1,16 @@
 <template>
     <div v-if="city === 'Cape Town'">
-       <h2 class="sub-heading mt-4">Availability for <span class="color-word2">{{ " " + city }}</span></h2>
+       <h1 :class="darkMode === true ? 'sub-heading' : 'sub-heading-darkmode'">Availability for <span :class="darkMode === true ? 'color-word2' : 'color-word2-darkmode'" >{{ " " + city }}</span></h1>
       <div class="row">
         <div class="col-xs-12 col-md-6 col-xl-4" v-for="cape in cptAvail" :key="cape">
             <img class="head-pic mt-3" alt="cpt header" src="../assets/cpt-light.jpg" />
            <span class="dates ms-4 pt-3"
               >{{ cape.date }}</span
             ><br />
-            <span v-if="cape.remaining > 0" class="status ms-4 pt-3"
+            <span :class="darkMode === true ? 'status-light' : 'status-dark'" v-if="cape.remaining > 0" class="status ms-4 pt-3"
               >{{ cape.remaining + " seats left" }}</span
             >
-            <span v-else class="status ms-4 pt-3"
+            <span :class="darkMode === true ? 'status-light' : 'status-dark'" v-else class="status ms-4 pt-3"
               >Sold Out</span
             ><br>
             <Button
@@ -35,17 +35,17 @@
     <!-- Johannesburg -->
 
     <div v-if="city === 'Johannesburg'">
-       <h1>Availability for <span class="color-word2">{{ " " + city }}</span></h1>
+       <h1 :class="darkMode === true ? 'sub-heading' : 'sub-heading-darkmode'">Availability for <span :class="darkMode === true ? 'color-word2' : 'color-word2-darkmode'" >{{ " " + city }}</span></h1>
       <div class="row">
         <div class="col-xs-12 col-md-6 col-xl-4" v-for="joburg in jhbAvail" :key="joburg">
           <img class="head-pic" alt="jhb header" src="../assets/jhb-light.jpg" />
             <span class="dates"
               >{{ joburg.date }}</span
             ><br />
-            <span v-if="joburg.remaining > 0" class="status ms-4 pt-3"
+            <span :class="darkMode === true ? 'status-light' : 'status-dark'" v-if="joburg.remaining > 0" class="status ms-4 pt-3"
               >{{ joburg.remaining + " seats left" }}</span
             >
-            <span v-else class="status ms-4 pt-3"
+            <span :class="darkMode === true ? 'status-light' : 'status-dark'" v-else class="status ms-4 pt-3"
               >Sold Out</span
             ><br>
             <Button
@@ -69,17 +69,17 @@
     <!-- Durban  -->
 
     <div v-if="city === 'Durban'">
-      <h1>Availability for <span class="color-word2">{{ " " + city }}</span></h1>
+      <h1 :class="darkMode === true ? 'sub-heading' : 'sub-heading-darkmode'">Availability for <span :class="darkMode === true ? 'color-word2' : 'color-word2-darkmode'" >{{ " " + city }}</span></h1>
       <div class="row">
         <div class="col-xs-12 col-md-6 col-xl-4" v-for="durbs in dbnAvail" :key="durbs">
            <img class="head-pic" alt="dbn header" src="../assets/kzn-light.jpg" />
            <span class="dates"
               >{{ durbs.date }}</span
             ><br />
-            <span v-if="durbs.remaining > 0" class="status ms-4 pt-3"
+            <span :class="darkMode === true ? 'status-light' : 'status-dark'" v-if="durbs.remaining > 0" class="status ms-4 pt-3"
               >{{ durbs.remaining + " seats left" }}</span
             >
-            <span v-else class="status ms-4 pt-3"
+            <span :class="darkMode === true ? 'status-light' : 'status-dark'" v-else class="status ms-4 pt-3"
               >Sold Out</span
             ><br>
             <Button
@@ -132,6 +132,7 @@ export default {
       cptAvail: (state) => state.booking.cptAvail,
       jhbAvail: (state) => state.booking.jhbAvail,
       dbnAvail: (state) => state.booking.dbnAvail,
+      darkMode: (state) => state.booking.darkMode,
     }),
   },
   methods: {
@@ -182,13 +183,20 @@ color: #ffffff;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
-  text-transform: uppercase;
+  /* font-size: 30px;
+  text-transform: uppercase; */
   color: #000000;
 }
 .color-word2 {
   color: #3d5f77;
 }
+.status-light{
+  color: #3d5f77;
+}
+h1{
+  margin: 30px;
+}
+
 
 
 
@@ -249,11 +257,15 @@ color: #ffffff;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
-  text-transform: uppercase;
-  color: #000000;
+  /* font-size: 30px;
+  text-transform: uppercase; */
+  color: #ffffff;
 }
 .color-word2-darkmode {
-  color: #3d5f77;
+  color: #d4af37;
+}
+
+.status-dark{
+  color: #d4af37;
 }
 </style>
